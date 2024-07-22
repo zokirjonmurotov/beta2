@@ -1,14 +1,21 @@
+import { Route, Routes } from 'react-router-dom'
 import './App.css'
-import Showcase from './Showcase'
+import Home from './pages/home/Home'
+import About from './pages/about/About'
+import Header from './components/Header'
+import NotFound from './components/NotFound'
+
 
 function App() {
 
   return (
     <div>
-    <h1>Hi Users👋</h1>
-    <h3> No! </h3>
-    <b>Lorem ipsum dolor sit amet.</b>
-    <Showcase />
+      <Header />
+      <Routes>
+        <Route path='/' element={<Home/>} />
+        <Route path='/about' element={<About/>}/>
+        <Route path='*' element={<NotFound/>}/>
+      </Routes>
     </div>
   )
 }
