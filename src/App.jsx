@@ -18,6 +18,7 @@ function App() {
         <Route path='*' element={<NotFound/>}/>
       </Routes>
       <h1>Hello Foxes</h1>
+      <h2>Hello hackers</h2>
     </div>
   )
 }
