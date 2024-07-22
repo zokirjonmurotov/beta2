@@ -17,6 +17,7 @@ function App() {
         <Route path='/about' element={<About/>}/>
         <Route path='*' element={<NotFound/>}/>
       </Routes>
+      <h1>Hello Foxes</h1>
     </div>
   )
 }
