@@ -10,15 +10,7 @@ function App() {
 
   return (
     <div>
-      <Header/>
-      <h1>Salom</h1>
-      <Routes>
-        <Route path='/' element={<Home/>} />
-        <Route path='/about' element={<About/>}/>
-        <Route path='*' element={<NotFound/>}/>
-      </Routes>
-      <h1>Hello Foxes</h1>
-      <h2>Hello hackers</h2>
+      good luck hackers
     </div>
   )
 }
