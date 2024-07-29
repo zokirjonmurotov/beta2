@@ -1,26 +1,23 @@
-import { Route, Routes } from 'react-router-dom'
-import './App.css'
-import Home from './pages/home/Home'
-import About from './pages/about/About'
-import Header from './components/Header'
-import NotFound from './components/NotFound'
-
+import "./App.css";
+import { Route, Routes } from "react-router-dom";
+import NotFound from "./pages/NotFound/NotFound";
+import Home from "./pages/home/Home";
+import Posts from "./pages/Posts/Posts";
+import Users from "./pages/Users/Users";
+import Navbar from "./components/Navbar";
 
 function App() {
-
   return (
-    <div>
-      <Header/>
-      <h1>Salom</h1>
-      <Routes>
-        <Route path='/' element={<Home/>} />
-        <Route path='/about' element={<About/>}/>
-        <Route path='*' element={<NotFound/>}/>
-      </Routes>
-      <h1>Hello Foxes</h1>
-      <h2>Hello hackers</h2>
-    </div>
+  <>
+  <Navbar/>
+  <Routes>
+    <Route path="/" element={<Home/>}/>
+    <Route path="/Posts" element={<Posts/>}/>
+    <Route path="/Users" element={<Users/>}/>
+    <Route path='*' element={<NotFound/>}/>
+  </Routes>
+  </>
   )
 }
 
-export default App
+export default App;

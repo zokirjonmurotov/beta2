@@ -1,6 +1,6 @@
 import React from "react";
 
-function Home() {
+function NotFound() {
   return (
     <div
       style={{
@@ -11,9 +11,9 @@ function Home() {
         justifyContent: "center",
       }}
     >
-      <h1>Home Page</h1>
+      <h1>Not Found!😕</h1>
     </div>
   );
 }
 
-export default Home;
+export default NotFound;
