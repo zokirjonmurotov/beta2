@@ -1,7 +1,6 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import './NavBar.css'
-import { transition } from 'd3'
 function Navbar() {
     const navLinkStyles = ({isActive})=>({
         color:isActive ? '#4c8bf5':'grey',

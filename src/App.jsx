@@ -5,6 +5,7 @@ import Home from "./pages/home/Home";
 import Posts from "./pages/Posts/Posts";
 import Users from "./pages/Users/Users";
 import Navbar from "./components/Navbar";
+import PostDetail from "./pages/Posts/PostDetail";
 
 function App() {
   return (
@@ -12,7 +13,9 @@ function App() {
   <Navbar/>
   <Routes>
     <Route path="/" element={<Home/>}/>
-    <Route path="/Posts" element={<Posts/>}/>
+    <Route path="/posts" element={<Posts/>}>
+      <Route path=":postId" element={<PostDetail/>}/>
+    </Route>
     <Route path="/Users" element={<Users/>}/>
     <Route path='*' element={<NotFound/>}/>
   </Routes>
