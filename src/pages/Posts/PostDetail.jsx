@@ -1,27 +1,39 @@
 import "./PostDetail.scss"
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import Button from "../../components/Button";
 
 
 function PostDetail(){
     const [postData, setPostData] = useState([]);
-    console.log(postData);
+    const {postId} = useParams()
     const navigate = useNavigate()
     useEffect(()=>{
         async function getDetailData(){
-            let response = await fetch('https://jsonplaceholder.typicode.com/posts/1')
-            let data = response.json()
+            let response = await fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`)
+            let data = await response.json()
             setPostData(data)
-        }
+        }   
         getDetailData()
     },[])
+
+    const handleBack = () =>{
+        navigate('/posts')
+    }
+    const handleComments = () =>{
+        navigate(`/posts/${postId}/comments`)
+    }
     return(
         <>
-        {
-            console.log('working')
-        }
-        <div style={{marginTop:50}} className="postdetail">
-            <h1>DETAIL PAGE</h1>
+        <div style={{marginTop:100}} className="postdetail">
+            <div className="card">
+                <h1>"{postData?.title}"</h1>
+                <h3>{postData?.body}</h3>
+                <div className="btns">
+                <Button name="Back.." buttonFn={handleBack}/>
+                <Button name="Comments" buttonFn={handleComments}/>
+                </div>
+            </div>
         </div>
         </>
     )

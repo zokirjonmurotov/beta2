@@ -6,6 +6,7 @@ import Posts from "./pages/Posts/Posts";
 import Users from "./pages/Users/Users";
 import Navbar from "./components/Navbar";
 import PostDetail from "./pages/Posts/PostDetail";
+import Comments from "./pages/Posts/Comments";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
     <Route path="/" element={<Home/>}/>
     <Route path="/posts" element={<Posts/>}/>
     <Route path="posts/:postId" element={<PostDetail/>}/>
+    <Route path="posts/:postId/comments" element={<Comments />}/>
     <Route path="/Users" element={<Users/>}/>
     <Route path='*' element={<NotFound/>}/>
   </Routes>

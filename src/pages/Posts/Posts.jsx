@@ -20,11 +20,11 @@ function Posts() {
       {
         postData.map((el, key)=>{
           const handleComments =()=>{
-            navigate()
+            navigate(`/posts/${el.id}`)
           }
           return (
             <div className="card" key={key}>
-              <h2>{el.title}</h2>
+              <h3>{el.title}</h3>
               <Button name="More details.. " buttonFn={handleComments}/>
             </div>
           )
