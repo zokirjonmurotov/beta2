@@ -20,7 +20,7 @@ function PostDetail(){
         {
             console.log('working')
         }
-        <div className="postdetail">
+        <div style={{marginTop:50}} className="postdetail">
             <h1>DETAIL PAGE</h1>
         </div>
         </>
