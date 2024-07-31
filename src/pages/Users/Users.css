@@ -1,0 +1,15 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+.parent{
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: repeat(3, 430px);
+    gap: 50px;
+    padding: 30px;
+    font-size: 18px;
+}

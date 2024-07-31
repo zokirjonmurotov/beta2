@@ -1,13 +1,12 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
-
 function UsersComponent(props) {
   let navigate = useNavigate()
   function Navigation(){
    return navigate(`/Users/${props?.item?.id}`)
   }
   return (
-    <div >
+    <div>
     <h2>Name: {props?.item?.name}</h2>
       {/* <p>{props?.item?.address}</p> */}
       <p>PhoneNumber 📞 : {props?.item?.phone}</p>

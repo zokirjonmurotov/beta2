@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import UsersComponent from "../../components/UsersComponent";
 import { useNavigate } from "react-router-dom";
+import "./Users.css"
 function Users() {
   let [usersData, setUsersData] = useState([]);
   
@@ -12,7 +13,7 @@ function Users() {
   return (
     <div style={{ fontSize: "20px" }}>
       {/* {console.log(usersData)} */}
-      <div style={{marginTop: '100px', padding:'10px', display:'flex', gap:'30px', flexDirection:'column'}}>
+      <div className="parent">
         {usersData.map((item) => {
           return (
             <>
