@@ -1,17 +1,36 @@
-import React from "react";
-
+import React, { useState, useEffect } from "react";
+import { Outlet, useNavigate } from "react-router-dom";
+import "./Posts.scss"
+import Button from "../../components/Button";
 function Posts() {
+  const [postData, setPostData] = useState([]);
+  const navigate = useNavigate()
+  useEffect(()=>{
+    async function getPostData (){
+      let response = await fetch('https://jsonplaceholder.typicode.com/posts')
+      let data = await response.json()
+      setPostData(data)
+    }
+    getPostData()
+  }, [])
+
+
   return (
-    <div
-      style={{
-        width: "100vw",
-        height: "100vh",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-      }}
-    >
-      <h1>Posts Page</h1>
+    <div className="posts">
+      {
+        postData.map((el, key)=>{
+          const handleComments =()=>{
+            navigate(`/posts/${el.id}`)
+          }
+          return (
+            <div className="card" key={key}>
+              <h3>{el.title}</h3>
+              <Button name="More details.. " buttonFn={handleComments}/>
+            </div>
+          )
+        })
+      }
+      <Outlet />
     </div>
   );
 }

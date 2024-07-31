@@ -1,5 +1,5 @@
 import React from "react";
-
+import "./Home.scss"
 function Home() {
   return (
     <div
@@ -10,6 +10,7 @@ function Home() {
         alignItems: "center",
         justifyContent: "center",
       }}
+    className="home"
     >
       <h1>Home Page</h1>
     </div>
