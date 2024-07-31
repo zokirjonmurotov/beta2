@@ -5,7 +5,7 @@ import Home from "./pages/home/Home";
 import Posts from "./pages/Posts/Posts";
 import Users from "./pages/Users/Users";
 import Navbar from "./components/Navbar";
-
+import Detail from "./pages/Detail/detail"
 function App() {
   return (
   <>
@@ -15,6 +15,7 @@ function App() {
     <Route path="/Posts" element={<Posts/>}/>
     <Route path="/Users" element={<Users/>}/>
     <Route path='*' element={<NotFound/>}/>
+    <Route path="/Users/:id" element={<Detail />}/>
   </Routes>
   </>
   )
